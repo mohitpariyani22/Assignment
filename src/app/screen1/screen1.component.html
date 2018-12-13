@@ -1,0 +1,24 @@
+<div class="screen1">
+    <div class="left">
+        <p>Select the loading time range <br/>(in seconds)</p>
+        <select #time (change)="onChange(time.value)">
+            <option value="0-100">0-100</option>
+            <option value="100-200">100-200</option>
+            <option value="200-500">200-500</option>
+            <option value="500-1000">500-1000</option>
+            <option value="1000-1500">1000-1500</option>
+          </select>
+    </div>
+    <div class="right">
+        <div class="hold">
+            <P>Select a particular loading time</P>
+            <ng5-slider (userChange)="onChangeSlider(value)" class="mb50" [(value)]="value" [options]="options"></ng5-slider>
+            <mat-slide-toggle class="example-margin" (change)="slideToggleChange(checked)" [color]="color" [checked]="checked" [disabled]="disabled">
+                Enable the loading time as selected on slider
+            </mat-slide-toggle>
+        </div>
+    </div>
+</div>
+<div class="btn">
+    <button (click)="onSubmit()">Submit</button>
+</div>
